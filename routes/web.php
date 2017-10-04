@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('phonebook');
 });
+
+//Corrigindo erro de rotas vue
+Route::get('/{name}', function(){
+  return redirect('/');
+})->where('name','[A-Za-z]+');
